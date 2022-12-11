@@ -1,0 +1,601 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+.attribution { text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --black: rgba(0, 0, 0);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6% 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+    --input-errors: hsl(0, 100%, 66%);
+    --active-input-border: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    --space-grotesk: 'Space Grotesk', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body { font-family: var(--space-grotesk); }
+
+.container { display: flex; }
+
+.bg {
+    height: auto;
+    width: 100%;
+    display: block;
+}
+
+/* STYLING CARD */
+.bg-card-front {
+    position: absolute;
+    height: auto;
+    display: block;
+}
+
+.card-logo {
+    position: absolute;
+    height: auto;
+    display: block;
+}
+
+.card-number {
+    position: absolute;
+    color: var(--white);
+}
+
+.cardholder-name {
+    position: absolute;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.card-exp-date {
+    position: absolute;
+    color: var(--white);
+    display: flex;
+}
+
+.bg-card-back {
+    position: absolute;
+    height: auto;
+    display: block;
+}
+
+.cvc {
+    position: absolute;
+    color: var(--white);
+}
+
+/* FORM */
+#main { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form { display: block; }
+
+label {
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+input { font-family: var(--space-grotesk); }
+
+#cardholder-name {
+    display: block;
+    width: 100%;
+}
+
+#card-number {
+    display: block;
+    width: 100%;
+}
+
+.card-exp-date-and-cvc { display: flex; }
+
+.exp-date { width: 45%; }
+
+.month-and-year { display: flex; }
+
+#month { width: 100%; }
+
+#year { width: 100%; }
+
+.card-verification-code { width: 55%; }
+
+#cvc {
+    display: block;
+    width: 100%;
+}
+
+.confirm {
+    background-color: var(--black);
+    color: var(--white);
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+
+input:not([type="submit"]):focus { outline-color: var(--active-input-border); }
+input:not([type="submit"]):active { border-color: var(--active-input-border); }
+
+/* ERROR MESSAGE */
+.error-message {
+    display: none;
+    color: var(--input-errors);
+}
+
+/* COMPLETED STATE */
+.completed-state {
+    display: none;
+    text-align: center;
+    width: 100%;
+}
+
+.complete {
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.completed-state > h1 { text-transform: uppercase; }
+
+.continue {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: var(--space-grotesk);
+    cursor: pointer;
+    display: block;
+}
+
+@media screen and (max-width: 480px) {
+    .attribution { font-size: 2.148vw; }
+
+    .container { flex-direction: column; }
+
+    /* STYLING CARD */
+    .bg-card-front {
+        width: 75%;
+        top: 34.5vw;
+        left: 5vw;
+        border-radius: 1.953vw;
+        box-shadow: 0 1.953vw 3.906vw 0 rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    }
+
+    .card-logo {
+        width: 15%;
+        top: 39vw;
+        left: 10vw;
+        z-index: 1;
+    }
+
+    .card-number {
+        top: 56.5vw;
+        left: 10vw;
+        font-size: 4.5vw;
+        letter-spacing: .6vw;
+        z-index: 1;
+    }
+
+    .cardholder-name {
+        top: 67vw;
+        left: 10vw;
+        font-size: 2.7vw;
+        letter-spacing: .3vw;
+        z-index: 1;
+    }
+
+    .card-exp-date {
+        top: 67vw;
+        left: 64vw;
+        font-size: 2.7vw;
+        letter-spacing: .3vw;
+        z-index: 1;
+    }
+
+    .bg-card-back {
+        width: 75%;
+        top: 11vw;
+        left: 20vw;
+        border-radius: 1.953vw;
+    }
+
+    .cvc {
+        top: 29.5vw;
+        left: 79.5vw;
+        font-size: 2.7vw;
+        letter-spacing: .1vw;
+    }
+
+    /* FORM */
+    #main { margin-top: 25vw; }
+
+    form { width: 90%; }
+
+    label {
+        font-size: 2.7vw;
+        letter-spacing: .36vw;
+    }
+
+    label:not([for="cardholder-name"]) { margin-top: 4.5vw; }
+
+    #cardholder-name {
+        margin-top: 1.8vw;
+        padding: 2.5vw 3.5vw;
+        border-radius: 1.368vw;
+        font-size: 3.8vw;
+    }
+
+    #card-number {
+        margin-top: 1.8vw;
+        padding: 2.5vw 3.5vw;
+        border-radius: 1.368vw;
+        font-size: 3.8vw;
+    }
+
+    .card-exp-date-and-cvc { gap: 4.5vw; }
+
+    .month-and-year { gap: .6vw; }
+
+    #month {
+        margin-top: 1.8vw;
+        padding: 2.5vw 3.5vw;
+        border-radius: 1.368vw;
+        font-size: 3.8vw;
+    }
+
+    #year {
+        margin-top: 1.8vw;
+        margin-left: 1.5vw;
+        padding: 2.5vw 3.5vw;
+        border-radius: 1.368vw;
+        font-size: 3.8vw;
+    }
+
+    #cvc {
+        margin-top: 1.8vw;
+        padding: 2.5vw 3.5vw;
+        border-radius: 1.368vw;
+        font-size: 3.8vw;
+    }
+
+    .confirm {
+        margin-top: 6vw;
+        padding: 3vw;
+        border-radius: 1.368vw;
+        font-size: 3.8vw;
+        letter-spacing: .15vw;
+    }
+
+    /* ERROR MESSAGE */
+    .error-message {
+        font-size: 2.7vw;
+        margin-top: 1.5vw;
+    }
+
+    /* COMPLETED STATE */
+    .complete { width: 19%; }
+
+    .completed-state > h1 {
+        letter-spacing: 1vw;
+        margin-top: 7.5vw;
+        font-size: 6vw;
+    }
+
+    .completed-state > p {
+        margin-top: 4.5vw;
+        font-size: 4.5vw;
+    }
+
+    .continue {
+        width: 90%;
+        margin: 12vw auto 0;
+        padding: 3vw;
+        border-radius: 1.368vw;
+        font-size: 3.8vw;
+        letter-spacing: .15vw;
+    }
+}
+
+@media screen and (min-width: 480.5px) and (max-width: 768px) {
+    .attribution { font-size: 1.432vw; }
+
+    .container { flex-direction: column; }
+
+    /* STYLING CARD */
+    .bg-card-front {
+        width: 70%;
+        top: 35vw;
+        left: 5vw;
+        border-radius: 1.302vw;
+        box-shadow: 0 1.302vw 2.604vw 0 rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    }
+
+    .card-logo {
+        width: 15%;
+        top: 39vw;
+        left: 10vw;
+        z-index: 1;
+    }
+
+    .card-number {
+        top: 56.5vw;
+        left: 10vw;
+        font-size: 4.5vw;
+        letter-spacing: .4vw;
+        z-index: 1;
+    }
+
+    .cardholder-name {
+        top: 67vw;
+        left: 10vw;
+        font-size: 2vw;
+        letter-spacing: .2vw;
+        z-index: 1;
+    }
+
+    .card-exp-date {
+        top: 67vw;
+        left: 62vw;
+        font-size: 2vw;
+        letter-spacing: .2vw;
+        z-index: 1;
+    }
+
+    .bg-card-back {
+        width: 70%;
+        top: 13vw;
+        right: 5vw;
+        border-radius: 1.302vw;
+        box-shadow: 0 1.302vw 2.604vw 0 rgba(0, 0, 0, 0.4);
+    }
+
+    .cvc {
+        top: 30.5vw;
+        left: 81.5vw;
+        font-size: 2vw;
+        letter-spacing: .2vw;
+    }
+
+    /* FORM */
+    #main { margin-top: 20vw; }
+
+    form { width: 90%; }
+
+    label {
+        font-size: 2vw;
+        letter-spacing: .24vw;
+    }
+
+    label:not([for="cardholder-name"]) { margin-top: 3vw; }
+
+    #cardholder-name {
+        margin-top: 1.2vw;
+        padding: 1.9vw 2.5vw;
+        font-size: 3vw;
+        border-radius: 1.302vw;
+    }
+
+    #card-number {
+        margin-top: 1.2vw;
+        padding: 1.9vw 2.5vw;
+        font-size: 3vw;
+        border-radius: 1.302vw;
+    }
+
+    .card-exp-date-and-cvc { gap: 3vw; }
+
+    #month {
+        margin-top: 1.2vw;
+        padding: 1.9vw 2.5vw;
+        font-size: 3vw;
+        border-radius: 1.302vw;
+    }
+
+    #year {
+        margin-top: 1.2vw;
+        margin-left: 1vw;
+        padding: 1.9vw 2.5vw;
+        font-size: 3vw;
+        border-radius: 1.302vw;
+    }
+    
+    #cvc {
+        margin-top: 1.2vw;
+        padding: 1.9vw 2.5vw;
+        font-size: 3vw;
+        border-radius: 1.302vw;
+    }
+
+    .confirm {
+        margin-top: 4vw;
+        padding: 2vw;
+        border-radius: 0.912vw;
+        font-size: 3vw;
+        letter-spacing: .1vw;
+    }
+
+    /* ERROR MESSAGE */
+    .error-message {
+        font-size: 1.8vw;
+        margin-top: 1vw;
+    }
+
+    /* COMPLETED STATE */
+    .complete { width: 12%; }
+
+    .completed-state > h1 {
+        letter-spacing: .8vw;
+        margin-top: 5vw;
+        font-size: 4.35vw;
+    }
+
+    .completed-state > p {
+        margin-top: 3.5vw;
+        font-size: 3.455vw;
+    }
+
+    .continue {
+        width: 80%;
+        margin: 6vw auto 0;
+        padding: 2vw;
+        border-radius: 0.912vw;
+        font-size: 2.755vw;
+        letter-spacing: .1vw;
+    }
+}
+
+@media screen and (min-width: 768.5px) {
+    .attribution { font-size: 0.716vw; }
+
+    picture { width: 30%; }
+
+    /* STYLING CARD */
+    .bg-card-front {
+        width: 30%;
+        top: 11vw;
+        left: 10vw;    
+        border-radius: 0.651vw;
+        box-shadow: 0 0.651vw 1.302vw 0 rgba(0, 0, 0, 0.4);
+    }
+
+    .card-logo {
+        width: 5%;
+        top: 12.8vw;
+        left: 12vw;
+    }
+
+    .card-number {
+        top: 20vw;
+        left: 12vw;
+        font-size: 1.85vw;
+        letter-spacing: .2vw;
+    }
+
+    .cardholder-name {
+        top: 24.5vw;
+        left: 12vw;
+        font-size: .9vw;
+        letter-spacing: .1vw;
+    }
+
+    .card-exp-date {
+        top: 24.5vw;
+        left: 33.7vw;
+        font-size: .9vw;
+        letter-spacing: .1vw;
+    }
+
+    .bg-card-back {
+        width: 30%;
+        top: 29vw;
+        left: 16vw;
+        border-radius: 0.651vw;
+        box-shadow: 0 0.651vw 1.302vw 0 rgba(0, 0, 0, 0.4);
+    }
+
+    .cvc {
+        top: 36.4vw;
+        left: 39.8vw;
+        font-size: .9vw;
+        letter-spacing: .1vw;
+    }
+
+    /* FORM */
+    #main { width: 70%; }
+
+    form { width: 40%; }
+
+    label {
+        font-size: .9vw;
+        letter-spacing: .12vw;
+    }
+
+    label:not([for="cardholder-name"]) { margin-top: 1.5vw; }
+
+    #cardholder-name {
+        margin-top: .6vw;
+        padding: .6vw 1vw;
+        border-radius: 0.456vw;
+        font-size: 1.27vw;
+    }
+
+    #card-number {
+        margin-top: .6vw;
+        padding: .6vw 1vw;
+        border-radius: 0.456vw;
+        font-size: 1.27vw;
+    }
+
+    .card-exp-date-and-cvc { gap: 1.5vw; }
+
+    .month-and-year { gap: .2vw; }
+
+    #month {
+        margin-top: .6vw;
+        padding: .6vw 1vw;
+        border-radius: 0.456vw;
+        font-size: 1.27vw;
+    }
+
+    #year {
+        margin-top: .6vw;
+        margin-left: .5vw;
+        padding: .6vw 1vw;
+        border-radius: 0.456vw;
+        font-size: 1.27vw;
+    }
+
+    #cvc {
+        margin-top: .6vw;
+        padding: .6vw 1vw;
+        border-radius: 0.456vw;
+        font-size: 1.27vw;
+    }
+
+    .confirm {
+        margin-top: 2vw;
+        padding: 1vw;
+        border-radius: 0.456vw;
+        font-size: 1.045vw;
+        letter-spacing: .05vw;
+    }
+
+    /* ERROR MESSAGE */
+    .error-message {
+        font-size: .9vw;
+        margin-top: .5vw;
+    }
+
+    /* COMPLETED STATE */
+    .complete { width: 7%; }
+
+    .completed-state > h1 {
+        letter-spacing: .2vw;
+        margin-top: 2.5vw;
+        font-size: 1.65vw;
+    }
+
+    .completed-state > p {
+        margin-top: 1vw;
+        font-size: 1.045vw;
+    }
+
+    .continue {
+        width: 35%;
+        margin: 3vw auto 0;
+        padding: 1vw;
+        border-radius: 0.456vw;
+        font-size: 1.045vw;
+        letter-spacing: .05vw;
+    }
+}

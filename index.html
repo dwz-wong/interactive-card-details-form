@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/bg-main-mobile.png">
+      <img src="images/bg-main-desktop.png" alt="bg" class="bg">
+    </picture>
+
+    <main id="main">
+      <form id="form" onsubmit="return creditForm()">
+        <label for="cardholder-name">Cardholder Name</label>
+        <input type="text" name="cardholder-name" id="cardholder-name" placeholder="e.g. Jane Appleseed" onkeyup="cardholder_name_keyup()">
+        <p id="error-msg-for-cardholder-name" class="error-message">This is a required field</p>
+
+        <label for="card-number">Card Number</label>
+        <input type="text" name="card-number" id="card-number" placeholder="e.g. 1234 5678 9123 0000" maxlength="20" onkeyup="card_number_keyup()">
+        <p id="error-msg-for-card-number" class="error-message">Wrong format, numbers only</p>
+        
+        <div class="card-exp-date-and-cvc">
+          <div class="exp-date">
+            <label for="exp-date">Exp. Date (MM/YY)</label>
+            <div class="month-and-year">
+              <input type="text" name="exp-date" id="month" placeholder="MM" maxlength="2" onkeyup="month_keyup()">
+              <input type="text" name="exp-date" id="year" placeholder="YY" maxlength="2" onkeyup="year_keyup()">
+            </div>
+            <p id="error-msg-for-card-exp-date" class="error-message">Can't be blank</p>
+          </div>
+
+          <div class="card-verification-code">
+            <label for="cvc">CVC</label>
+            <input type="text" name="cvc" id="cvc" placeholder="e.g. 123" maxlength="3" onkeyup="cvc_keyup()">
+            <p id="error-msg-for-cvc" class="error-message">Can't be blank</p>
+          </div>
+        </div>
+
+        <input type="submit" id="confirm" class="confirm" value="Confirm">
+      </form>
+
+      <section id="completed-state" class="completed-state">
+        <img src="images/icon-complete.svg" alt="complete" class="complete">
+        <h1>Thank you!</h1>
+        <p>We've added your card details</p>
+        <button onclick="move_to_next_form()" id="continue" class="continue">Continue</button>
+      </section>
+    </main>
+
+    <img src="images/bg-card-front.png" alt="bg-card-front" class="bg-card-front">
+    <img src="images/card-logo.svg" alt="card-logo" class="card-logo">
+    <p id="card_number" class="card-number">0000 0000 0000 0000</p>
+    <p id="cardholder_name" class="cardholder-name">Jane Appleseed</p>
+    <div class="card-exp-date">
+      <p id="exp-month" class="month">00</p>
+      <p>/</p>
+      <p id="exp-year" class="year">00</p>
+    </div>
+
+    <img src="images/bg-card-back.png" alt="bg-card-back" class="bg-card-back">
+    <p id="card-verification-code" class="cvc">000</p>
+  </div>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/dwz-wong">HL Wong</a>.
+  </footer>
+</body>
+</html>
