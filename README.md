@@ -38,7 +38,7 @@ Users should be able to:
 **Tablet Design**
 ![Tablet](screenshots/tablet.png)
 
-**Mobile Design**
+**Mobile Design** <br>
 ![Mobile](screenshots/mobile.png)
 
 ### Links
